@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}{{ PEN_NAME }}{% endblock %}</title>
+    <!-- Tailwind via CDN for quick local preview -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"/>
+    <meta name="description" content="Books by {{ PEN_NAME }} — bold, modern LGBTQ+ fiction."/>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="{{ url_for('index') }}" class="text-xl font-bold tracking-tight">Evan J. <span class="text-purple-600">Corbin</span></a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a class="hover:text-purple-600" href="{{ url_for('index') }}">Home</a>
+          <a class="hover:text-purple-600" href="{{ url_for('book_page', slug='atonement-camp') }}">Atonement Camp I</a>
+          <a class="hover:text-purple-600" href="{{ url_for('book_page', slug='atonement-camp-redemption') }}">Atonement Camp II</a>
+          <a class="hover:text-purple-600" href="{{ url_for('book_page', slug='asher-and-the-prince') }}">Asher & the Prince</a>
+          <a class="hover:text-purple-600" href="{{ url_for('book_page', slug='jingled') }}">Jingled</a>
+          <a class="hover:text-purple-600" href="{{ url_for('about') }}">About</a>
+        </nav>
+        <button data-open-newsletter class="ml-4 px-4 py-2 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Subscribe</button>
+      </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 mt-16">
+      <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-500">© {{ PEN_NAME }} {{ now().year }}</p>
+        <div class="flex items-center gap-4 text-sm">
+          <a href="{{ url_for('about') }}" class="hover:text-purple-600">About</a>
+          <a href="#" data-open-newsletter class="hover:text-purple-600">Newsletter</a>
+          <a href="{{ url_for('privacy') }}" class="hover:text-purple-600">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletter-modal" class="hidden fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-black/40" data-close-newsletter></div>
+      <div class="relative z-10 max-w-lg mx-auto mt-24 bg-white rounded-2xl shadow-xl">
+        <div class="p-6 md:p-8">
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="kicker mb-2">Free updates</div>
+              <h3 class="text-2xl font-bold">Join the {{ PEN_NAME }} newsletter</h3>
+              <p class="text-gray-600 mt-1">Be first to hear about new releases, ARCs, and events.</p>
+            </div>
+            <button data-close-newsletter class="text-gray-400 hover:text-gray-600">✕</button>
+          </div>
+          <form id="newsletter-form" class="mt-6 space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <input name="first_name" required placeholder="First name" class="w-full border rounded-xl px-3 py-2"/>
+              <input name="last_name" required placeholder="Last name" class="w-full border rounded-xl px-3 py-2"/>
+            </div>
+            <input type="email" name="email" required placeholder="Email address" class="w-full border rounded-xl px-3 py-2"/>
+            <button type="submit" class="w-full mt-2 px-4 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Join the newsletter</button>
+            <p id="subscribe-msg" class="hidden text-sm text-green-600"></p>
+          </form>
+          <p class="text-xs text-gray-500 mt-4">We’ll never share your email. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

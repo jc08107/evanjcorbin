@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% block title %}About — {{ PEN_NAME }}{% endblock %}
+{% block content %}
+<section class="bg-white">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-3xl md:text-4xl font-extrabold">About {{ PEN_NAME }}</h1>
+    <div class="prose-lg text-gray-700 mt-4 space-y-4">
+      <p>{{ PEN_NAME }} writes bold, genre-bending fiction—from biting social satire to queer YA adventures.</p>
+      <p>Works include <em>Atonement Camp for Unrepentant Homophobes</em>, its sequel <em>Atonement Camp for Redemption</em>, the YA fantasy sci‑fi romance <em>Asher & the Prince</em>, and the upcoming speculative satire <em>Jingled</em>.</p>
+      <p>For news, previews, and ARC opportunities, join the newsletter.</p>
+    </div>
+    <div class="mt-6">
+      <button data-open-newsletter class="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Subscribe</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

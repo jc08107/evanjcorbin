@@ -1,0 +1,69 @@
+
+{% extends "base.html" %}
+{% block title %}{{ PEN_NAME }} — Books{% endblock %}
+{% block content %}
+<section class="hero-gradient bg-grid">
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="kicker">Fiction by {{ PEN_NAME }}</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">Bold, funny, and fearless LGBTQ+ fiction.</h1>
+        <p class="mt-4 text-lg text-gray-600 max-w-prose">Satire that stings. Adventures that swoon. Discover four worlds—from the infamous <em>Atonement Camp</em> to the YA epic <em>Asher & the Prince</em>, and the upcoming social‑media satire <em>Jingled</em>.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="{{ url_for('book_page', slug='asher-and-the-prince') }}" class="px-5 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Start with Asher</a>
+          <button data-open-newsletter class="px-5 py-3 rounded-xl border font-semibold">Get updates</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <a class="block" href="{{ url_for('book_page', slug='atonement-camp') }}">
+          <img class="rounded-2xl shadow-xl" src="{{ url_for('static', filename='images/AtonementCamp-front.jpg') }}" alt="Atonement Camp cover">
+        </a>
+        <a class="block" href="{{ url_for('book_page', slug='atonement-camp-redemption') }}">
+          <img class="rounded-2xl shadow-xl" src="{{ url_for('static', filename='images/AtonementCampforRemption-front.jpg') }}" alt="Atonement Camp for Redemption cover">
+        </a>
+        <a class="block" href="{{ url_for('book_page', slug='asher-and-the-prince') }}">
+          <img class="rounded-2xl shadow-xl" src="{{ url_for('static', filename='images/asherandtheprince-front.jpg') }}" alt="Asher and the Prince cover">
+        </a>
+        <a class="block" href="{{ url_for('book_page', slug='jingled') }}">
+          <img class="rounded-2xl shadow-xl" src="{{ url_for('static', filename='images/jingled-front.jpg') }}" alt="Jingled cover">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="{{ url_for('book_page', slug='atonement-camp') }}" class="card p-6 border">
+        <span class="badge mb-3">Satire</span>
+        <h3 class="text-xl font-bold">Atonement Camp for Unrepentant Homophobes</h3>
+        <p class="text-gray-600 mt-2">“An outlandish novel that delivers wonderful laughs.” —Kirkus Reviews</p>
+      </a>
+      <a href="{{ url_for('book_page', slug='atonement-camp-redemption') }}" class="card p-6 border">
+        <span class="badge mb-3">Satire • Sequel</span>
+        <h3 class="text-xl font-bold">Atonement Camp for Redemption</h3>
+        <p class="text-gray-600 mt-2">Return to the camp in a riotous, heartfelt sequel.</p>
+      </a>
+      <a href="{{ url_for('book_page', slug='asher-and-the-prince') }}" class="card p-6 border">
+        <span class="badge mb-3">YA • Fantasy • Sci‑Fi • LGBTQ</span>
+        <h3 class="text-xl font-bold">Asher & the Prince</h3>
+        <p class="text-gray-600 mt-2">“A fun and eclectic combination of genres anchored by a touching gay teen romance.” —Kirkus Reviews</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="kicker">Coming soon</div>
+        <h3 class="text-2xl font-bold">Jingled</h3>
+        <p class="text-gray-600 max-w-prose mt-2">A speculative, razor‑sharp satire about echo chambers, family, and an algorithm that makes Christmas last forever.</p>
+      </div>
+      <button data-open-newsletter class="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Get early access</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

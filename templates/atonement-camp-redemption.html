@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block title %}Atonement Camp for Redemption — {% endblock %}
+{% block content %}
+<section class="relative bg-gray-50">
+  <div class="absolute inset-0 opacity-10 bg-grid"></div>
+  <div class="max-w-6xl mx-auto px-4 py-16 relative">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img class="rounded-2xl shadow-2xl w-full" src="{{ url_for('static', filename='images/AtonementCampforRemption-front.jpg') }}" alt="Atonement Camp for Redemption cover" />
+      <div>
+        <span class="badge">Satire Sequel</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold mt-2">Atonement Camp for Redemption</h1>
+        <h2 class='text-lg text-gray-700 mt-1'>Atonement Camp • Book 2</h2>
+        <div class="prose-lg mt-4 text-gray-700">
+<p>Back at the Atonement Camp, Rick faces new enemies, old flames, and a plot that could unravel everything. A riotous, big-hearted sequel about redemption, love, and chosen family.</p>
+</div>
+        <div class="mt-6 flex gap-3">
+          <a href="https://a.co/d/awSq0yb" class="px-5 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700" target="_blank" rel="noopener">Buy on Amazon</a>
+          <button data-open-newsletter class="px-5 py-3 rounded-xl border font-semibold">Get updates</button>
+        </div>
+        <div class="mt-8">
+<h3 class="text-lg font-semibold">Praise</h3>
+<ul class="list-disc ml-5 text-gray-700">
+  <li>Reader acclaim and blog tours highlighted its sharp humor and heart.</li>
+</ul>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
