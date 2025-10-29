@@ -1,4 +1,4 @@
-
+﻿
 {% extends "base.html" %}
 {% block title %}{{ PEN_NAME }} — Books{% endblock %}
 {% block content %}
@@ -8,7 +8,7 @@
       <div>
         <div class="kicker">Fiction by {{ PEN_NAME }}</div>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">Bold, funny, and fearless LGBTQ+ fiction.</h1>
-        <p class="mt-4 text-lg text-gray-600 max-w-prose">Satire that stings. Adventures that swoon. Discover four worlds—from the infamous <em>Atonement Camp</em> to the YA epic <em>Asher & the Prince</em>, and the upcoming social‑media satire <em>Jingled</em>.</p>
+        <p class="mt-4 text-lg text-gray-600 max-w-prose">Satire that stings. Adventures that swoon. Discover four worlds—from the infamous <em>Atonement Camp</em> to the YA epic <em>Asher & the Prince</em>, and the November 7, 2025 release of the social media satire <em>Jingled</em>.</p>
         <div class="mt-6 flex gap-3">
           <a href="{{ url_for('book_page', slug='asher-and-the-prince') }}" class="px-5 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700">Start with Asher</a>
           <button data-open-newsletter class="px-5 py-3 rounded-xl border font-semibold">Get updates</button>
@@ -58,7 +58,7 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
-        <div class="kicker">Coming soon</div>
+        <div class="kicker">Releases November 7, 2025</div>
         <h3 class="text-2xl font-bold">Jingled</h3>
         <p class="text-gray-600 max-w-prose mt-2">A speculative, razor‑sharp satire about echo chambers, family, and an algorithm that makes Christmas last forever.</p>
       </div>
@@ -67,3 +67,4 @@
   </div>
 </section>
 {% endblock %}
+
